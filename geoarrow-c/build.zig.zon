@@ -1,0 +1,17 @@
+// because zon file is really just a zig struct
+// comments are really done in the same way using 2 forward slashes
+.{
+    // the name of your project
+    .name = "geoarrow-zig",
+    // the version of your project
+    .version = "0.0.1",
+
+    // the actual packages you need as dependencies of your project
+    .dependencies = .{
+        .googletest = .{
+            .url = "git+https://github.com/allyourcodebase/googletest.git#4c5cf0207c4db459d7c950c629398244e13b44b2",
+            .hash = "1220e6a0a3273e7df58603983d4fe03b71861e4d4c60c46f18be64273090f60697f2",
+        },
+    },
+    .paths = .{ "build.zig", "build.zig.zon" },
+}
