@@ -31,7 +31,7 @@ jobs:
             target: x86_64-linux
             cpu: x86_64
           - os: windows-latest
-            target: x86_64-windows
+            target: x86_64-windows-msvc
             cpu: x86_64_v3
           - os: macos-latest
             target: x86_64-macos
@@ -39,6 +39,9 @@ jobs:
           # Add ARM64 macOS build
           - os: macos-latest
             target: aarch64-macos
+            cpu: apple_m1
+          - os: ubuntu-latest
+            target: aarch64-linux
             cpu: apple_m1
 
     steps:
@@ -68,4 +71,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: build-${{ matrix.target }}-${{ matrix.cpu }}
-        path: zig-out/
+        path: zig-out/bin
