@@ -71,4 +71,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: build-${{ matrix.target }}-${{ matrix.cpu }}
-        path: zig-out/bin
+        path: ${{ steps.strings.outputs.build-output-dir }}/zig-out/bin
