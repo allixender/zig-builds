@@ -62,7 +62,7 @@ jobs:
       # Execute tests defined by the CMake configuration. Note that --build-config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       # run: ctest --build-config ${{ matrix.build_type }}
-      run: zig run run_dggrid
+      run: zig build run_dggrid -Dtarget=${{ matrix.target }} -Dcpu=${{ matrix.cpu }} -Doptimize=ReleaseSafe
       
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
